@@ -2,9 +2,11 @@ var tree
 
 
 function setup() {
-    noCanvas();
+    createCanvas(900,700);
+    background(47);
+
     tree = new Tree();
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 5000; i++) {
         tree.addValue(floor(random(0, 1000)));
     }
 
