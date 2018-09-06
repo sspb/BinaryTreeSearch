@@ -23,9 +23,9 @@ Node.prototype.visit = function(parent) {
         this.left.visit(this);
     }
     // console.log(this.value);
-    stroke(map(this.value,0, 10000,0,255),47,76,47);
+    stroke(map(this.value,0, 10000,0,255),47,76,18);
     noFill();
-    var ndCircDia = map(dist(mouseX,mouseY,this.x,this.y),47,0,10,300);
+    var ndCircDia = map(dist(mouseX,mouseY,this.x,this.y),47,0,10,100);
     ellipse(this.x, this.y, ndCircDia, ndCircDia);
 
     noStroke();
@@ -48,8 +48,8 @@ Node.prototype.addNode = function(n) {
     if (n.value < this.value) {
         if (this.left == null) {
             this.left = n;
-            this.left.x = this.x - 47;
-            this.left.y = this.y + 29;
+            this.left.x = this.x - 76;
+            this.left.y = this.y + 47;
             // line(this.x, this.y, this.left.x, this.left.y);
         } else {
             this.left.addNode(n);
@@ -57,8 +57,8 @@ Node.prototype.addNode = function(n) {
     } else if (n.value > this.value) {
         if (this.right == null) {
             this.right = n;
-            this.right.x = this.x + 47;
-            this.right.y = this.y + 29;
+            this.right.x = this.x + 76;
+            this.right.y = this.y + 47;
             // line(this.x, this.y, this.right.x, this.right.y);
         } else {
             this.right.addNode(n);

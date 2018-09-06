@@ -6,7 +6,7 @@ function setup() {
     background(47);
 
     tree = new Tree();
-    for (var i = 0; i < 5000; i++) {
+    for (var i = 0; i < 1000; i++) {
         tree.addValue(floor(random(0, 10000)));
     }
 
@@ -14,7 +14,7 @@ function setup() {
 }
 
 function draw() {
-    background(47,29,11);
+    background(29,11,7);
     tree.traverse();
 
 }
