@@ -25,7 +25,7 @@ Node.prototype.visit = function(parent) {
     // console.log(this.value);
     stroke(map(this.value,0, 10000,0,255),47,76,47);
     noFill();
-    var ndCircDia = map(dist(mouseX,mouseY,this.x,this.y),47,0,10,30);
+    var ndCircDia = map(dist(mouseX,mouseY,this.x,this.y),47,0,10,300);
     ellipse(this.x, this.y, ndCircDia, ndCircDia);
 
     noStroke();

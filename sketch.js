@@ -14,7 +14,7 @@ function setup() {
 }
 
 function draw() {
-    background(11);
+    background(47,29,11);
     tree.traverse();
 
 }
