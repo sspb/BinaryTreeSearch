@@ -23,20 +23,20 @@ Node.prototype.visit = function(parent) {
         this.left.visit(this);
     }
     // console.log(this.value);
-    stroke(map(this.value,0, 10000,0,255),47,76,18);
+    var clrSclr = map(this.value,0, 100000,0,200);
+    stroke(clrSclr+55, 76, 255-clrSclr, 18);
     noFill();
-    var ndCircDia = map(dist(mouseX,mouseY,this.x,this.y),47,0,10,100);
+    var ndCircDia = map(dist(traveller.v.x,traveller.v.y,this.x,this.y),47,0,10,100);
     ellipse(this.x, this.y, ndCircDia, ndCircDia);
 
     noStroke();
     fill(250,47);
-    textSize(10);
+    textSize(8);
     textAlign(CENTER);
     text(this.value, this.x, this.y);
 
     stroke(100);
     line(parent.x, parent.y, this.x, this.y);
-
 
     if (this.right != null) {
         this.right.visit(this);
@@ -48,8 +48,8 @@ Node.prototype.addNode = function(n) {
     if (n.value < this.value) {
         if (this.left == null) {
             this.left = n;
-            this.left.x = this.x - 76;
-            this.left.y = this.y + 47;
+            this.left.x = this.x - 29;
+            this.left.y = this.y + 18;
             // line(this.x, this.y, this.left.x, this.left.y);
         } else {
             this.left.addNode(n);
@@ -57,8 +57,8 @@ Node.prototype.addNode = function(n) {
     } else if (n.value > this.value) {
         if (this.right == null) {
             this.right = n;
-            this.right.x = this.x + 76;
-            this.right.y = this.y + 47;
+            this.right.x = this.x + 29;
+            this.right.y = this.y + 18;
             // line(this.x, this.y, this.right.x, this.right.y);
         } else {
             this.right.addNode(n);
